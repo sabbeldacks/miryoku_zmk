@@ -1,0 +1,10 @@
+name: 'Build kyria nice_nano_v2'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      custom_config: '["#define MIRYOKU_ALPHAS=QWERTZ"]'
+      shield: '["kyria_left","kyria_right"]'
